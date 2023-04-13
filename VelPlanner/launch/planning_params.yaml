@@ -1,0 +1,42 @@
+#MapTopic:                   '/random_complex/global_map'
+#TargetTopic:                '/move_base_simple/goal'
+#OdomFrame:                  '/world_enu'
+# 14 12
+#18 16
+# 21 18
+#goal: [-14.0,14.0,1.3]
+ControlMode: 'pos_vel_acc_yaw_c'
+WorldFrameName: 'map'
+goal: [6.8,0.0,1.2]
+ifMove:         true #false #
+UseRcGuide:     false
+ReturnHome: 4     #the one-way trip number. should >= 2 to active retrun home mode. If = 2, drone fly to the goal and return home.
+if_RandomGoal: true
+if_debug: false
+
+CtrlFreq: 150
+
+GlobalBox_min:              [-15.0, -15.0, 0.2]  #global box constraint. The lower bound for all polyhedrons.
+GlobalBox_size:             [30.0, 30.0, 3.0]    #global box size, the allowed vehicle moving range is : GlobalBox_min->GlobalBox_min+GlobalBox_size
+
+DynObsSize_min:             [0.3, 0.3, 0.5]
+DynObsSize_max:             [1.0, 1.0, 2.5]
+DynObsNum:                  30
+SafeCheckRange:             4.0
+SafeMargin:                 0.3  #0.3 for static hardware test
+search/safety_radius:       0.4  # should be bigger than SafeMargin
+VelMax:                     2.0  # maximal speed for kino-path searching and trajectory optimization. The code will double this max speed 
+                                 #constrain (at least to 4 m/s) for trajectory when a ball is detected
+JerkMax:                    36.0
+DynObsSpeed_max:            2.0
+
+VelPlanDisWeight:           100.0
+ThrustAccMax:               15.0
+
+GravAcc:                    9.81
+
+plan_horizon:               6.0
+cam_depth:                  8.5   # the camera fov: depth, horizontal view angle, vertical angle. depth > search/horizon
+h_fov:                      87.0
+v_fov:                      58.0
+

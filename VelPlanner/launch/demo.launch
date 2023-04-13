@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>    
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find velplanner)/launch/planning_demo.rviz" required="true" />
+
+
+ <node pkg="velplanner" type="fake_obs_sim" name="fake_obs_sim" output="screen">
+   
+      <rosparam file="$(find velplanner)/launch/planning_params.yaml" command="load" />
+
+  </node>
+
+ <!-- <node pkg="velplanner" type="fly_once" name="fly_once" output="screen">
+   
+      <rosparam file="$(find velplanner)/launch/planning_params.yaml" command="load" />
+
+  </node> -->
+
+</launch>

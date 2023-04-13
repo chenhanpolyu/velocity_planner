@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>    
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gazebo_sim)/launch/planning_demo.rviz" required="true" />
+
+	     <node pkg="gazebo_sim" type="imu_boost.sh" 
+    name="imu_boost" output="screen">
+    </node>
+</launch>

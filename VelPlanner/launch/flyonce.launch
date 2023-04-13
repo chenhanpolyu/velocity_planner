@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>    
+
+ <node pkg="velplanner" type="fly_once" name="fly_once" output="screen">
+   
+      <rosparam file="$(find velplanner)/launch/planning_params.yaml" command="load" />
+
+  </node>
+
+</launch>
